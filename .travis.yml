@@ -1,7 +1,7 @@
 sudo: required
 
-matrix:
-  env:
+env:
+  matrix:
     - DOCKER_IMAGE=ubuntu:16.04
     - DOCKER_IMAGE=ubuntu:16.10
 
@@ -14,6 +14,7 @@ compiler:
   - gcc
 
 before_install:
+  - echo $DOCKER_IMAGE
   - docker pull $DOCKER_IMAGE
   - docker run -it $DOCKER_IMAGE bash
 
