@@ -16,7 +16,7 @@ compiler:
 before_install:
   - echo $DOCKER_IMAGE
   - docker pull $DOCKER_IMAGE
-  - docker run -d $DOCKER_IMAGE 'while true; sleep 1; done'
+  - docker run -d $DOCKER_IMAGE 'while true; do sleep 1; done'
 
 before_script:
   - docker exec -it $(docker ps -aq) 'sudo apt-get -qq update'
