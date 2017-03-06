@@ -16,11 +16,11 @@ compiler:
 before_install:
   - echo $DOCKER_IMAGE
   - docker pull $DOCKER_IMAGE
-  - docker run -it $DOCKER_IMAGE bash
+  - docker run -d $DOCKER_IMAGE bash
 
 before_script:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y sudo build-essential linux-headers-$(uname -r)
+  - docker exec -it $(docker ps -aq) 'sudo apt-get -qq update'
+  - docker exec -it $(docker ps -aq) 'sudo apt-get install -y sudo build-essential linux-headers-$(uname -r)'
 
 script:
-  - make && sudo make install
+  - docker exec -it $(docker ps -aq) 'make && sudo make install'
