@@ -17,10 +17,11 @@ before_install:
   - echo $DOCKER_IMAGE
   - docker pull $DOCKER_IMAGE
   - docker run -d $DOCKER_IMAGE /bin/sh -C 'while true; do sleep 1; done'
+  - docker exec $(docker ps -aq) /bin/sh -C 'id'
 
 before_script:
-  - docker exec -it $(docker ps -aq) /bin/sh -C 'sudo apt-get -qq update'
-  - docker exec -it $(docker ps -aq) /bin/sh -C 'sudo apt-get install -y sudo build-essential linux-headers-$(uname -r)'
+  - docker exec $(docker ps -aq) /bin/sh -C 'sudo apt-get -qq update'
+  - docker exec $(docker ps -aq) /bin/sh -C 'sudo apt-get install -y sudo build-essential linux-headers-$(uname -r)'
 
 script:
-  - docker exec -it $(docker ps -aq) /bin/sh -C 'make && sudo make install'
+  - docker exec $(docker ps -aq) /bin/sh -C 'make && sudo make install'
