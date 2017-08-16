@@ -1171,5 +1171,10 @@ __inline static u8 *myid(struct eeprom_priv *peepriv)
 #include <pci_hal.h>
 #endif
 
+static inline bool is_compat_task(void)
+{
+    return in_ia32_syscall() || in_x32_syscall();
+}
+
 #endif //__DRV_TYPES_H__
 
