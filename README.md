@@ -5,8 +5,9 @@ This repo contains a driver originally called `rtl8821AU_linux_v4.3.14_13455.201
 I originally got the source code off a cd that came with [this usb wifi adapter](https://www.amazon.com/Heiyo-Network-600Mbps-802-11ac-Wireless/dp/B01N2NJFPG).
 
 This driver have been tested on:
-    * Ubuntu 16.04.2 LTS with kernel 4.4.0-64-generic using a "Heiyo Network Wi-Fi Dongle 802.11ac"
-    * Ubuntu 16.04.2 LTS with kernel 4.10.0-32-generic using a "NetGear, Inc. A6100 AC600 DB Wireless Adapter"
+
+* Ubuntu 16.04.2 LTS with kernel 4.4.0-64-generic using a "Heiyo Network Wi-Fi Dongle 802.11ac"
+* Ubuntu 16.04.2 LTS with kernel 4.10.0-32-generic using a "NetGear, Inc. A6100 AC600 DB Wireless Adapter"
 
 ## Building
 ```
